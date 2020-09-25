@@ -22,7 +22,7 @@ Topics:
 user project
 ------------
 
-This guide will focus on limiting consumption of openshift resources. This lesson will be essential for anyone mananing a multi-tenant cluster. Start by creating your own project/namespace and making sure your oc client context is set to that namespace.
+This guide will focus on limiting consumption of openshift resources. This lesson will be essential for anyone maintaining a multi-tenant cluster. Start by creating your own project/namespace and making sure your oc client context is set to that namespace.
 
 meaning of cpu in kubernetes
 ----------------------------
