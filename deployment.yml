@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: podlist
+  name: podlist
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: podlist
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: podlist
+    spec:
+      serviceAccountName: <my-service-account>
+      containers:
+      - image: allen13/podlist:v0.1.0
+        name: podlist
+        resources:
+          requests:
+            memory: "16Mi"
+            cpu: "200m"
+          limits:
+            memory: "32Mi"
+            cpu: "300m"
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo
+spec:
+  containers:
+  - name: demo1
+    image: demo/demo1
+    resources:
+      requests:
+        memory: "16Mi"
+        cpu: "100m"
+      limits:
+        memory: "32Mi"
+        cpu: "200m"
