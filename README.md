@@ -167,3 +167,12 @@ Kubernetes will continue to grow in adoption. However, over time, developers wil
 
 * [Future of Kubernetes](https://cloudacademy.com/blog/kubernetes-the-current-and-future-state-of-k8s-in-the-enterprise/)
 * [Distributed Operating System](https://medium.com/@bleggett/kubernetes-distributed-operating-systems-and-language-level-parallelism-deb7a6710e41)
+
+fixing errors
+-------------
+
+* Host mount error: oc adm policy add-scc-to-user hostmount-anyuid -z my-service-account -n my-project
+* Container limit error: increase the cpu limit in limitrange.yml and apply. Delete and recreate the deployment.
+* Resource limit error: increase the cpu limit in resourcequota.yml and apply. Delete and recreate the deploymnet.
+* Failed because of pod view permissions: oc adm policy add-cluster-role-to-user view -z <serviceaccountname> -n <namespace>
+* Failed because of OOM (out of memory). Edit the deployment and increase the cpu memory limit.
